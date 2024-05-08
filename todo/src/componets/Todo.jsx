@@ -1,5 +1,5 @@
 import React from 'react';
-
+/* Pq n roda ? */ 
 const Todo = ({ todo, removeTodo, completeTodo }) => {
     return(
       <div className="todo" style= {{ textDecoration: todo.isCompleted ? "line-through" : "" }} >
