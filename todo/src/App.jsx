@@ -43,7 +43,7 @@ function App() {
   };
 
   const removeTodo = (id) => {
-    const newTodo = [...todos]
+    const newTodos = [...todos]
     const filteredTodos = newTodos.filter((todo) =>
        todo.id !==id ? todo :null
     );
@@ -53,7 +53,7 @@ function App() {
   const completeTodo = (id) =>{
     const newTodos = [...todos]
     newTodos.map((todo) => todo.id === id ? todo.isCompleted = !todo.isCompleted : todo);
-    setTodos(newTodo);
+    setTodos(newTodos);
   };
 
   return (
@@ -64,6 +64,7 @@ function App() {
           <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo} />
         ))}
       </div>
+      <hr></hr>
       <TodoForm addTodo={addTodo}/>
     </div>
   );
