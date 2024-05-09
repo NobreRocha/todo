@@ -5,7 +5,7 @@ const TodoForm = ({ addTodo }) => {
   const [category, setCategory] = useState("");
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         if (!value || !category) return;
         addTodo(value, category);
         setValue("");
@@ -15,7 +15,9 @@ const TodoForm = ({ addTodo }) => {
     return <div className="todo-form">
         <h2>Criar tarefa:</h2>
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Digite o títolo" onChange={(e) => setValue(e.target.value)}></input>
+            <input type="text" placeholder="Digite o títolo" 
+            value={value}
+            onChange={(e) => setValue(e.target.value)}></input>
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value="">Selecione uma categoria</option>
                 <option value="Trabalho">Trabalho</option>
